@@ -1,0 +1,49 @@
+<div class="calc-container">
+  <h1>Calculadora Online</h1>
+  <p class="subtitle">Prueba de Integración: Angular + Django <br>
+  Byron Melo y Alan Olivo
+  </p>
+
+  <div class="calculator">
+    <div class="display">
+      <div class="op-indicator" *ngIf="operacionActual">
+        {{ numeroA }} {{ operacionActual === 'sumar' ? '+' : operacionActual === 'restar' ? '-' : operacionActual === 'multiplicar' ? '×' : '÷' }}
+      </div>
+      <div class="main-screen">{{ pantalla }}</div>
+    </div>
+
+    <div class="button-grid">
+      <button class="btn-tool" (click)="limpiar()">C</button>
+      <button class="btn-op" (click)="seleccionarOperacion('dividir')">÷</button>
+      <button class="btn-op" (click)="seleccionarOperacion('multiplicar')">×</button>
+      <button class="btn-op" (click)="seleccionarOperacion('restar')">-</button>
+
+      <button (click)="agregarNumero('7')">7</button>
+      <button (click)="agregarNumero('8')">8</button>
+      <button (click)="agregarNumero('9')">9</button>
+      <button class="btn-op btn-plus" (click)="seleccionarOperacion('sumar')">+</button>
+
+      <button (click)="agregarNumero('4')">4</button>
+      <button (click)="agregarNumero('5')">5</button>
+      <button (click)="agregarNumero('6')">6</button>
+
+      <button (click)="agregarNumero('1')">1</button>
+      <button (click)="agregarNumero('2')">2</button>
+      <button (click)="agregarNumero('3')">3</button>
+      <button class="btn-equal" (click)="calcular()" [disabled]="cargando">
+        {{ cargando ? '...' : '=' }}
+      </button>
+
+      <button class="btn-zero" (click)="agregarNumero('0')">0</button>
+      <button (click)="agregarNumero('.')">.</button>
+    </div>
+  </div>
+
+  <div class="error-msg" *ngIf="errorBackend">
+    <strong>Error de Django:</strong> {{ errorBackend }}
+  </div>
+  
+  <div class="warning-msg" *ngIf="advertencia">
+    <strong>Aviso:</strong> {{ advertencia }}
+  </div>
+</div>

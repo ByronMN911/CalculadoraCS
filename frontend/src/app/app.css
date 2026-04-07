@@ -1,0 +1,121 @@
+.calc-container {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 40px;
+  color: #333;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Contenedor principal de la calculadora */
+.calculator {
+  width: 320px;
+  background-color: #1a1a1a;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Pantalla */
+.display {
+  background-color: #2d2d2d;
+  color: white;
+  padding: 20px;
+  text-align: right;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.op-indicator {
+  font-size: 0.9rem;
+  color: #107c10; /* Verde Xbox */
+  margin-bottom: 5px;
+}
+
+.main-screen {
+  font-size: 2.5rem;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+/* Cuadrícula de botones */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  border-radius: 8px;
+  border: none;
+  background-color: #3b3b3b;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #4d4d4d;
+}
+
+/* Estilos especiales */
+.btn-op {
+  background-color: #333;
+  color: #107c10;
+  font-weight: bold;
+}
+
+.btn-tool {
+  background-color: #d13438;
+}
+
+.btn-equal {
+  grid-row: span 2;
+  height: 130px;
+  background-color: #107c10;
+}
+
+.btn-equal:hover {
+  background-color: #15a315;
+}
+
+.btn-zero {
+  grid-column: span 2;
+}
+
+/* Mensaje de error */
+.error-msg {
+  margin-top: 20px;
+  color: #d13438;
+  background: #fde7e9;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #d13438;
+}
+.btn-plus {
+  grid-row: span 2;
+  height: 130px;
+}
+
+.warning-msg {
+  margin-top: 15px;
+  color: #856404;
+  background-color: #fff3cd;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #ffeeba;
+  font-size: 0.9rem;
+  max-width: 320px;
+}
